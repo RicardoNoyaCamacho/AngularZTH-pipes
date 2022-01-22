@@ -10,33 +10,32 @@ const routes: Routes = [
   {
     path: '',
     component: BasicosComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'numeros',
-    component: NumerosComponent
+    component: NumerosComponent,
   },
   {
     path: 'no-comunes',
-    component: NoComunesComponent
+    component: NoComunesComponent,
   },
   {
     path: 'ordenar',
-    component: OrdenarComponent
+    component: OrdenarComponent,
   },
   {
     path: '**',
-    redirectTo: ''
-  }
-]
-
+    redirectTo: '',
+  },
+];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      useHash: true, // <- Indicar que se use el hash
+    }),
   ],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule],
 })
-export class AppRouterModule { }
+export class AppRouterModule {}
