@@ -1,6 +1,7 @@
 # PipesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+Este es un proyecto que muestra los principales pipes usasdos en Angular
+Igual algunos pipes personalizados
 
 ## Development server
 
