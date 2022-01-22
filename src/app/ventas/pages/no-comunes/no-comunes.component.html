@@ -1,0 +1,67 @@
+<div class="text-layout">
+    <h1>Pipes no tan comunes</h1>
+    <p>
+        Pipes incluídos en Angular en el Common Module.
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col md:col-6">
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+            <p>
+                Saludos {{ nombre }}, es un placer {{ genero | i18nSelect: invitacionMapa}}
+                a nuestro evento.
+            </p>
+            <button (click)="cambiarCliente()" pButton label="Cambiar persona" class="p-button-help"></button>
+        </p-fieldset>
+    </div>
+    <div class="col md:col-6">
+        <p-fieldset legend="i8nPlural Pipe" [toggleable]="true">
+            <p>
+                Acualmente {{ clientes.length | i18nPlural: clientesMapa}} cliente esperando
+            </p>
+            <button (click)="borrarCliente()" pButton label="Borrar persona" class="p-button-danger"></button>
+        </p-fieldset>
+    </div>
+    <div class="col md:col-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+            <b>Original</b>
+            <pre>{{ clientes }}</pre>
+            <b>slice:0:2</b>
+            <pre> {{ clientes | slice:0:2 }}</pre>
+            <b>slice:1:2</b>
+            <pre> {{ clientes | slice:1:2 }}</pre>
+            <b>slice:1:3</b>
+            <pre> {{ clientes | slice:1:3 }}</pre>
+            <b>slice:0:3</b>
+            <pre> {{ 'Ricardo' | slice:0:3 }}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="col md:col-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <ul>
+                <li *ngFor="let item of persona | keyvalue">
+                    <b>{{ item.key | titlecase }}:</b> {{ item.value }}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+
+    <div class="col md:col-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+            <pre>{{ heroes | json }}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="col md:col-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <!--* El pipe async se suscribe internamente -->
+            <pre *ngIf="!(miObservable | async)">Resolviendo Observable</pre>
+            <pre>{{ miObservable | async }}</pre>
+
+            <pre *ngIf="!(valorPromesa | async)">Resolviendo Promesa</pre>
+            <pre> {{ valorPromesa | async }} </pre>
+        </p-fieldset>
+    </div>
+</div>
