@@ -3,6 +3,11 @@
 Este es un proyecto que muestra los principales pipes usasdos en Angular
 Igual algunos pipes personalizados
 
+Puedes consutarla en:
+```
+https://ricardonoyacamacho.github.io/AngularZTH-pipes/#/
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
